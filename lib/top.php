@@ -97,7 +97,11 @@
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login/Register -->
                                     <div class="login-register-btn mr-50">
-                                        <a href="login.php" id="loginBtn">Login / Register</a>
+                                        <?php if(isset($_SESSION['id'])){ ?>
+                                            <a href="_logout.php" id="loginBtn">로그아웃</a>
+                                        <?php } else { ?>
+                                        <a href="login.php" id="loginBtn">로그인 / 회원가입</a>
+                                        <?php }  ?>
                                     </div>
 
                                     <!-- Cart Button -->
