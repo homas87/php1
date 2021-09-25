@@ -98,9 +98,11 @@
                                     <!-- Login/Register -->
                                     <div class="login-register-btn mr-50">
                                         <?php if(isset($_SESSION['id'])){ ?>
-                                            <a href="_logout.php" id="loginBtn">로그아웃</a>
+                                            <a href="#"><?php if(isset($_SESSION['name'])){ echo $_SESSION['name']; } ?> </a>  
+                                            <a href="_logout.php" id="loginBtn"> / 로그아웃</a>
                                         <?php } else { ?>
-                                        <a href="login.php" id="loginBtn">로그인 / 회원가입</a>
+                                        <a href="login.php" id="loginBtn">로그인</a>
+                                        <a href="join.php" id="loginBtn">/ 회원가입</a>
                                         <?php }  ?>
                                     </div>
 
