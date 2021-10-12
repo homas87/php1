@@ -5,6 +5,19 @@ $category = $_POST['category'];
 $title = $_POST['title'];
 $content = $_POST['content'];
 // $name = $_POST['img_file]'];
+
+
+$img_file = $_FILES['img_file'];
+$img_size = $_FILES['img_file']['size'];
+
+require('_file_upload.php');
+if($result){
+    $sql = "INSERT INTO `blog1` (name, title, category, content, id, img_file ,img_size) VALUES ('$name', '$title', '$category', '$content', '$id', '$file_name', '$img_size')";
+}else{
+    $sql = "INSERT INTO `blog1` (name, title, category,content,id) VALUES ('$name','$title','$category','$content','$id')";
+}
+
+
 require('_conn.php');
 $sql = "INSERT INTO `blog1` (name, title, category,content,id) VALUES ('$name','$title','$category','$content','$id')";
 $result = mysqli_query($conn, $sql);
